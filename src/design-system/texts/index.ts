@@ -1,6 +1,6 @@
 export * from './big';
 export * from './normal';
-export * from './pagination';
+export * from './pagination-text';
 export * from './paragraph';
 export * from './small';
 export * from './sub-title';

@@ -5,6 +5,10 @@ export const Container = styled.section`
   width: 100%;
   display: grid;
   grid-template-columns: 360px 1fr;
+
+  @media (max-width: 1130px) {
+    grid-template-columns: 200px 1fr;
+  }
 `;
 
 export const InformationContainer = styled.div`
@@ -24,6 +28,9 @@ export const CalculatorContainer = styled.div`
 
 export const Content = styled.div`
   width: 570px;
+  @media (max-width: 1130px) {
+    width: 500px;
+  }
 `;
 
 export const AmountContainer = styled.div`

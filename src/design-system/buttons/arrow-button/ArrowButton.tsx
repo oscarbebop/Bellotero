@@ -7,7 +7,7 @@ interface IProps {
   action: () => void;
 }
 
-export default function ArrowButton(props: IProps) {
+export default function ArrowButton(props: IProps): JSX.Element {
   const { action, direction } = props;
 
   return (

@@ -1,6 +1,6 @@
 import { colors } from 'design-system/colors';
 
-export default function LeftArrow() {
+export default function LeftArrow(): JSX.Element {
   return (
     <svg
       width={18}

@@ -1,6 +1,6 @@
 import { colors } from 'design-system/colors';
 
-export default function Logo() {
+export default function Logo(): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

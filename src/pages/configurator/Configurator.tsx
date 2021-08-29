@@ -12,7 +12,7 @@ import {
   TitleContainer,
 } from './Configurator.styles';
 
-export default function Configurator() {
+export default function Configurator(): JSX.Element {
   return (
     <Layout>
       <Container>

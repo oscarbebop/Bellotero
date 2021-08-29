@@ -6,7 +6,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-export default function Layout(props: IProps) {
+export default function Layout(props: IProps): JSX.Element {
   const { children } = props;
 
   return (
