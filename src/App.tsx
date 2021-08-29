@@ -1,14 +1,33 @@
+// react router dom
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+// redux
 import { Provider } from 'react-redux';
 import store from 'store';
 
-import Sample from 'components/Sample';
+// pages
+import Configurator from 'pages/Configurator';
+import NotFound from 'pages/NotFound';
+import Testimonial from 'pages/Testimonial';
 
 function App() {
   return (
-    <Provider store={store}>
-      <h1>works</h1>
-      <Sample />
-    </Provider>
+    <Router>
+      <Provider store={store}>
+        <Switch>
+          <Route exact path="/page-2">
+            <Configurator />
+          </Route>
+          <Route exact path="/page-1">
+            <Testimonial />
+          </Route>
+          <Route exact path="/">
+            <Testimonial />
+          </Route>
+          <Route component={NotFound} />
+        </Switch>
+      </Provider>
+    </Router>
   );
 }
 

@@ -11,5 +11,12 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: #f9faff;
+}
+
+a {
+  text-decoration: none;
+  height: 100%;
 }

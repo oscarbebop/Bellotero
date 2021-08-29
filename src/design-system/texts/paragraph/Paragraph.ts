@@ -7,6 +7,7 @@ const Paragraph = styled.p`
   font-size: ${fontStyles.fontSize.paragraph};
   color: ${colors.black};
   font-weight: ${fontStyles.fontWeight.regular};
+  margin: 0;
 `;
 
 export default Paragraph;

@@ -12,6 +12,7 @@ const Small = styled.p<ISmall>`
   font-size: ${fontStyles.fontSize.small};
   ${({ color }) => `color: ${color};`}
   ${({ weight }) => `font-weight: ${weight};`}
+  margin: 0;
 `;
 
 Small.defaultProps = {
