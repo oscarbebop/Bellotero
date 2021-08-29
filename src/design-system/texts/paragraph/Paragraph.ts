@@ -8,6 +8,7 @@ const Paragraph = styled.p<{ children: React.ReactNode }>`
   color: ${colors.black};
   font-weight: ${fontStyles.fontWeight.regular};
   margin: 0;
+  line-height: 1.5;
 `;
 
 export default Paragraph;

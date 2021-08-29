@@ -19,9 +19,11 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Container>
-        <LogoContainer>
-          <Logo />
-        </LogoContainer>
+        <NavLink to="/page-1">
+          <LogoContainer>
+            <Logo />
+          </LogoContainer>
+        </NavLink>
         <NavContainer>
           <NavLink activeClassName="selected" to="/page-1">
             <LinkContainer active={pathname === '/' || pathname === '/page-1'}>

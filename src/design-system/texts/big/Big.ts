@@ -7,6 +7,7 @@ const Big = styled.h2<{ children: React.ReactNode }>`
   font-size: ${fontStyles.fontSize.big};
   color: ${colors.cobaltBlue};
   font-weight: ${fontStyles.fontWeight.medium};
+  margin: 0;
 `;
 
 export default Big;

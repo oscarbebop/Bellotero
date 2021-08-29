@@ -10,7 +10,7 @@ const Title = styled.h1<{ children: React.ReactNode }>`
   background-color: ${colors.cobaltBlue};
   padding: 8px 4px;
   width: fit-content;
-  margin: 0;
+  margin: 5px 0;
 `;
 
 export default Title;
