@@ -7,17 +7,17 @@ import { Small } from 'design-system/texts';
 
 import {
   Container,
-  Header,
+  HeaderContainer,
   LinkContainer,
   LogoContainer,
   NavContainer,
-} from './Navigation.styles';
+} from './Header.styles';
 
-export default function Navigation() {
+export default function Header() {
   const { pathname } = useLocation();
 
   return (
-    <Header>
+    <HeaderContainer>
       <Container>
         <LogoContainer>
           <Logo />
@@ -45,6 +45,6 @@ export default function Navigation() {
           </NavLink>
         </NavContainer>
       </Container>
-    </Header>
+    </HeaderContainer>
   );
 }

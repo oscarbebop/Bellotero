@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import store from 'store';
 
 // pages
-import Configurator from 'pages/Configurator';
-import NotFound from 'pages/NotFound';
-import Testimonial from 'pages/Testimonial';
+import Configurator from 'pages/configurator';
+import NotFound from 'pages/not-found';
+import Testimonial from 'pages/testimonials';
 
 function App() {
   return (

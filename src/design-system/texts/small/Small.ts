@@ -4,6 +4,7 @@ import { colors } from 'design-system/colors';
 import { fontStyles } from 'design-system/font-styles';
 
 interface ISmall {
+  children: React.ReactNode;
   color?: string;
   weight?: number;
 }

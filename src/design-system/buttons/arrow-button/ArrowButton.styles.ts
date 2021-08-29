@@ -11,4 +11,5 @@ export const ButtonContainer = styled.button`
   align-items: center;
   border: none;
   outline: none;
+  cursor: pointer;
 `;

@@ -4,13 +4,14 @@ import { ButtonContainer } from './ArrowButton.styles';
 
 interface IProps {
   direction: 'left' | 'right';
+  action: () => void;
 }
 
 export default function ArrowButton(props: IProps) {
-  const { direction } = props;
+  const { action, direction } = props;
 
   return (
-    <ButtonContainer>
+    <ButtonContainer onClick={action} type="button">
       {direction === 'left' ? <LeftArrow /> : <RightArrow />}
     </ButtonContainer>
   );

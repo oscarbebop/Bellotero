@@ -1,6 +1,6 @@
-import Navigation from 'components/navigation';
+import Header from 'components/header';
 
-import { Main } from './Layout.styles';
+import { Container, Content } from './Layout.styles';
 
 interface IProps {
   children: React.ReactNode;
@@ -10,9 +10,9 @@ export default function Layout(props: IProps) {
   const { children } = props;
 
   return (
-    <Main>
-      <Navigation />
-      {children}
-    </Main>
+    <Container>
+      <Header />
+      <Content>{children}</Content>
+    </Container>
   );
 }

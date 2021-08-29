@@ -2,18 +2,22 @@ import styled from 'styled-components';
 
 import { colors } from 'design-system/colors';
 
-export const Header = styled.header`
+export const HeaderContainer = styled.header`
   width: 100%;
   height: 74px;
   background-color: ${colors.white};
 `;
 
 export const Container = styled.div`
-  max-width: 1130px;
+  width: 1130px;
   height: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 150px 1fr;
+
+  @media (max-width: 1130px) {
+    width: 800px;
+  }
 `;
 
 export const LogoContainer = styled.div`
