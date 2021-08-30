@@ -44,6 +44,7 @@ export default function RangeSelector(props: IProps): JSX.Element {
       </InformationContainer>
       <RangeContainer>
         <InputRange
+          aria-labelledby="input range"
           min={min}
           max={max}
           value={initialValue}

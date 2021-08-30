@@ -11,7 +11,7 @@ export default function ArrowButton(props: IProps): JSX.Element {
   const { action, direction } = props;
 
   return (
-    <ButtonContainer onClick={action} type="button">
+    <ButtonContainer aria-label="arrow button" onClick={action} type="button">
       {direction === 'left' ? <LeftArrow /> : <RightArrow />}
     </ButtonContainer>
   );

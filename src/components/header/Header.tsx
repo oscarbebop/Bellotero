@@ -34,7 +34,7 @@ export default function Header(): JSX.Element {
   return (
     <HeaderContainer>
       <Container>
-        <NavLink to="/page-1">
+        <NavLink to="/page-1" aria-label="logo button">
           <LogoContainer>
             <Logo />
           </LogoContainer>
@@ -43,6 +43,7 @@ export default function Header(): JSX.Element {
           {navigation &&
             navigation.map((element: INavigation) => (
               <NavLink
+                aria-label={element.text}
                 activeClassName="selected"
                 key={element.text}
                 to={`/${element.route}`}
