@@ -9,10 +9,8 @@ export interface ITestimonials {
 }
 
 export interface IConfigurator {
-  calculator: {
-    title: string;
-    description: string;
-  };
+  title: string;
+  description: string;
 }
 
 export interface IState {
@@ -26,4 +24,6 @@ export interface IGlobalState {
   currentTestimonial: number;
   testimonialPage: null | ITestimonials;
   configuratorPage: null | IConfigurator;
+  monthlyIngredientSpending: number;
+  fullTimeEmployees: number;
 }
