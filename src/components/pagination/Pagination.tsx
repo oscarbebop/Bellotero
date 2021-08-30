@@ -29,7 +29,7 @@ export default function Pagination(): JSX.Element {
   };
 
   const back = (): void => {
-    if (totalTestimonials && currentTestimonial > 0) {
+    if (currentTestimonial > 0) {
       dispatch(changeTestimonial(currentTestimonial - 1));
     }
   };
