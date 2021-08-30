@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const axiosCall = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://raw.githubusercontent.com/Bernabe-Felix/Bellotero/master',
 });
