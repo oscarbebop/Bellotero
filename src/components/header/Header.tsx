@@ -26,8 +26,8 @@ export default function Header(): JSX.Element {
 
   useEffect(() => {
     if (!navigation) {
-      const cargarProductos = () => dispatch(getNavigation());
-      cargarProductos();
+      const loadNavigation = () => dispatch(getNavigation());
+      loadNavigation();
     }
   }, [dispatch, navigation]);
 
@@ -41,45 +41,22 @@ export default function Header(): JSX.Element {
         </NavLink>
         <NavContainer>
           {navigation &&
-            navigation.map((element: INavigation) => {
-              console.log(element.route);
-              return (
-                <NavLink
-                  activeClassName="selected"
-                  key={element.text}
-                  to={`/${element.route}`}
-                >
-                  <LinkContainer active={pathname === `/${element.route}`}>
-                    <Small
-                      color={colors.cobaltBlue}
-                      weight={fontStyles.fontWeight.medium}
-                    >
-                      {element.text}
-                    </Small>
-                  </LinkContainer>
-                </NavLink>
-              );
-            })}
-          {/* <NavLink activeClassName="selected" to="/page-1">
-            <LinkContainer active={pathname === '/' || pathname === '/page-1'}>
-              <Small
-                color={colors.cobaltBlue}
-                weight={fontStyles.fontWeight.medium}
+            navigation.map((element: INavigation) => (
+              <NavLink
+                activeClassName="selected"
+                key={element.text}
+                to={`/${element.route}`}
               >
-                Testimonial
-              </Small>
-            </LinkContainer>
-          </NavLink>
-          <NavLink activeClassName="selected" to="/page-2">
-            <LinkContainer active={pathname === '/page-2'}>
-              <Small
-                color={colors.cobaltBlue}
-                weight={fontStyles.fontWeight.medium}
-              >
-                Configurator
-              </Small>
-            </LinkContainer>
-          </NavLink> */}
+                <LinkContainer active={pathname === `/${element.route}`}>
+                  <Small
+                    color={colors.cobaltBlue}
+                    weight={fontStyles.fontWeight.medium}
+                  >
+                    {element.text}
+                  </Small>
+                </LinkContainer>
+              </NavLink>
+            ))}
         </NavContainer>
       </Container>
     </HeaderContainer>

@@ -4,10 +4,8 @@ export interface INavigation {
 }
 
 export interface ITestimonials {
-  slider: {
-    title: string;
-    reviews: [{ name: string; position: string; comment: string }[]];
-  };
+  title: string;
+  reviews: { name: string; position: string; comment: string }[];
 }
 
 export interface IConfigurator {
@@ -25,6 +23,7 @@ export interface IGlobalState {
   navigation: null | INavigation[];
   loading: boolean;
   error: boolean;
+  currentTestimonial: number;
   testimonialPage: null | ITestimonials;
   configuratorPage: null | IConfigurator;
 }

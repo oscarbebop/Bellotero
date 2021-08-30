@@ -1,6 +1,10 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { IState } from 'types';
 
+import { getTestimonials } from 'actions/generalActions';
+
+import ErrorLayout from 'components/error-layout';
 import Layout from 'components/layout';
 import LoadingLayout from 'components/loading-layout';
 import Pagination from 'components/pagination';
@@ -16,39 +20,56 @@ import {
 } from './Testimonial.styles';
 
 export default function Testimonial(): JSX.Element {
-  const { loading } = useSelector((state: IState) => state.globalState);
+  const { currentTestimonial, error, loading, testimonialPage } = useSelector(
+    (state: IState) => state.globalState
+  );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!testimonialPage) {
+      const loadTestimonials = () => dispatch(getTestimonials());
+      loadTestimonials();
+    }
+  }, [dispatch, testimonialPage]);
 
   return (
     <>
       {loading ? (
         <LoadingLayout />
       ) : (
-        <Layout>
-          <Container>
-            <Title>Our customers love us</Title>
-            <TestimonialContainer>
-              <UserContainer>
-                <SubTitle>Pete Zahut</SubTitle>
-                <Small
-                  color={colors.greyish}
-                  weight={fontStyles.fontWeight.regular}
-                >
-                  Chef @ Maniak
-                </Small>
-              </UserContainer>
-              <InformationContainer>
-                <Normal>
-                  It's funny what memory does, isn't it? My favorite holiday
-                  tradition might not have happened more than once or twice. But
-                  because it is such a good memory, so encapsulating of
-                  everything I love about the holidays, in my mind it happened
-                  every year. Without fail
-                </Normal>
-              </InformationContainer>
-            </TestimonialContainer>
-            <Pagination />
-          </Container>
-        </Layout>
+        <>
+          {error ? (
+            <ErrorLayout />
+          ) : (
+            <Layout>
+              {testimonialPage && (
+                <Container>
+                  <Title>{testimonialPage.title}</Title>
+                  <TestimonialContainer>
+                    <UserContainer>
+                      <SubTitle>
+                        {testimonialPage.reviews[currentTestimonial].name}
+                      </SubTitle>
+                      <Small
+                        color={colors.greyish}
+                        weight={fontStyles.fontWeight.regular}
+                      >
+                        {testimonialPage.reviews[currentTestimonial].position}
+                      </Small>
+                    </UserContainer>
+                    <InformationContainer>
+                      <Normal>
+                        {testimonialPage.reviews[currentTestimonial].comment}
+                      </Normal>
+                    </InformationContainer>
+                  </TestimonialContainer>
+                  <Pagination />
+                </Container>
+              )}
+            </Layout>
+          )}
+        </>
       )}
     </>
   );
