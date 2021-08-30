@@ -79,7 +79,7 @@ export default function Configurator(): JSX.Element {
                         initialValue={monthlyIngredientSpending}
                         text="Monthly ingredient spending"
                         type="spending"
-                        min={10}
+                        min={0}
                         max={100}
                         action={updateMonthlyIngredient}
                       />
@@ -87,7 +87,7 @@ export default function Configurator(): JSX.Element {
                         initialValue={fullTimeEmployees}
                         text="Full-time employees that process invoices"
                         type="employees"
-                        min={1}
+                        min={0}
                         max={10}
                         action={updateTimeEmployees}
                       />

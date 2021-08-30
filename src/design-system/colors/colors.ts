@@ -4,6 +4,7 @@ const colors = {
   greyish: '#a5a5a5',
   iceBlue: '#f9faff',
   paleLilac: '#d6dcff',
+  paleGrey: '#f0f2ff',
   silver: '#CBCBCB',
   white: '#FFFFFF',
 };

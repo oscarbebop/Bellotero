@@ -49,6 +49,7 @@ export default function RangeSelector(props: IProps): JSX.Element {
           value={initialValue}
           step="1"
           type="range"
+          rangeType={type}
           onChange={(event) => dispatch(action(Number(event.target.value)))}
         />
       </RangeContainer>

@@ -36,7 +36,40 @@ export const RangeContainer = styled.div`
   display: flex;
 `;
 
-export const InputRange = styled.input`
+interface IInputRange {
+  value: number;
+  rangeType: 'spending' | 'employees';
+}
+
+export const InputRange = styled.input<IInputRange>`
   width: 100%;
   margin: 0;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 0;
+  height: 4px;
+  background: ${({ rangeType, value }) =>
+    value &&
+    `linear-gradient(to right, ${colors.cobaltBlue} 0%, ${colors.cobaltBlue} ${
+      rangeType === 'spending' ? value : value * 10
+    }%, ${colors.paleGrey} ${rangeType === 'spending' ? value : value * 10}%, ${
+      colors.paleGrey
+    } 100%);`};
+
+  ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background-image: radial-gradient(circle, #f7f7fc 20%, #071eb3 45%);
+    border-radius: 50%;
+  }
+
+  ::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    -moz-appearance: none;
+    background-image: radial-gradient(circle, #f7f7fc 40%, #071eb3 45%);
+    border-radius: 50%;
+  }
 `;
