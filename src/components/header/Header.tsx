@@ -46,6 +46,7 @@ export default function Header(): JSX.Element {
                 activeClassName="selected"
                 key={element.text}
                 to={`/${element.route}`}
+                className={element.route === '#' ? 'avoid-clicks' : ''}
               >
                 <LinkContainer active={pathname === `/${element.route}`}>
                   <Small

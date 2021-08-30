@@ -20,3 +20,7 @@ a {
   text-decoration: none;
   height: 100%;
 }
+
+.avoid-clicks {
+  pointer-events: none;
+}

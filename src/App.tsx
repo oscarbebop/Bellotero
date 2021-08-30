@@ -1,5 +1,10 @@
 // react router dom
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
 // redux
 import { Provider } from 'react-redux';
@@ -22,7 +27,7 @@ function App() {
             <Testimonial />
           </Route>
           <Route exact path="/">
-            <Testimonial />
+            <Redirect to="/page-1" />
           </Route>
           <Route component={NotFound} />
         </Switch>
